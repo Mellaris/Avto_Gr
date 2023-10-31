@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Avtobys_Gr
 {
-    internal class Gr : Avtobus
+    internal class Gr : Avto
     {
         public void Info()
         {
             Console.WriteLine("Чем вы хотите управлять? 1 - Автобус, 2 - Грузовик");
             vibor = Convert.ToInt32(Console.ReadLine());
-            B();
+            Benz();
             Console.Write("Введите расход на 100км: ");
             rasxod = float.Parse(Console.ReadLine());
             Console.Write("Введите с какой скоростью хотите ехать: ");
@@ -32,7 +32,7 @@ namespace Avtobys_Gr
                 Trip_2();
             }
         }
-        protected void Trip_2()
+        public void Trip_2()
         {
             do
             {

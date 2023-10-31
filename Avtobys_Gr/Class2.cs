@@ -15,7 +15,7 @@ namespace Avtobys_Gr
         private int sum_ves;
         private int ves_p;
         protected float t;
-        protected virtual void Trip()
+        public override void Trip()
         {
             do
             {
@@ -81,12 +81,6 @@ namespace Avtobys_Gr
             {
                 ves_p = 1;
             }
-        }
-        protected virtual void Vrem()
-        {
-            float t = (float)(road / speed);
-            t = t * 60;
-            Console.WriteLine($"Необходимо: {t} минут");
         }
     }
 }

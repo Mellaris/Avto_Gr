@@ -36,7 +36,7 @@ namespace Avtobys_Gr
         {
             Console.WriteLine($"Номер вашего авто: {vibor}; Количество бензина: {kol_benz}; Расход на 100км: {rasxod}; Ваша скорость: {speed}");
         }
-        protected void B()
+        protected void Benz()
         {
             Console.Write("Укажите сколько хотите добавить литров бензина: ");
             benz = Convert.ToInt32(Console.ReadLine());
@@ -45,7 +45,7 @@ namespace Avtobys_Gr
             {
                 Console.WriteLine("Не может быть больше 100 литров. Попробуйте еще раз");
                 kol_benz = kol_benz - benz;
-                B();
+                Benz();
             }
         }
         protected void Refill()
@@ -55,13 +55,12 @@ namespace Avtobys_Gr
             otvet = Console.ReadLine();
             if (otvet == "Да")
             {
-                B();
+                Benz();
                 if (kol_benz < 100)
                 {
                     if (x < kol_benz || x == kol_benz)
                     {
-                        Console.WriteLine("Вам хватает бензина");
-                        
+                        Console.WriteLine("Вам хватает бензина");                    
                     }
                 }
             }
@@ -89,5 +88,13 @@ namespace Avtobys_Gr
             ostatok = kol_benz;
             Console.WriteLine($"У вас осталось: {ostatok} литров бензина");
         }
+        protected void Vrem()
+        {
+            float t = (float)(road / speed);
+            t = t * 60;
+            Console.WriteLine($"Необходимо: {t} минут");
+        }
+        public virtual void Trip()
+        {}
     }  
 }
