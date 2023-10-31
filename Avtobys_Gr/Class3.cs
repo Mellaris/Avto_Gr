@@ -34,56 +34,53 @@ namespace Avtobys_Gr
         }
         protected void Trip_2()
         {
-                do
+            do
+            {
+                Random random = new Random();
+                road = random.Next(5, 300);
+                Console.WriteLine($"Необходимо проехать: {road}");
+                if (speed > 90)
                 {
-                    Random random = new Random();
-                    road = random.Next(5, 100);
-                    Console.WriteLine($"Необходимо проехать: {road}");
-                    if (speed > 90)
+                    x = road * (rasxod * ves_gr) * 2 / 100;
+                }
+                else if (speed < 60)
+                {
+                    x = road * (rasxod * ves_gr) / 2 / 100;
+                }
+                else
+                {
+                    x = road * (rasxod * ves_gr) / 100;
+                }
+                Console.WriteLine($"Необходимо: {x} литров бензина");
+                Vrem();
+                if (x < kol_benz || x == kol_benz)
+                {
+                    Console.WriteLine("Вам хватает бензина");
+                    kol_benz = kol_benz - x;
+                    Ostatok();
+                    Refill();
+                    Mileage();
+                }
+                else if (x > kol_benz)
+                {
+                    itog = x - kol_benz;
+                    Console.WriteLine($"Вам не хватает: {itog} литров бензина");
+                    Refill();
+                    if (otvet == "Да")
                     {
-                        x = road * (rasxod * ves_gr) * 2 / 100;
-                    }
-                    else if (speed < 60)
-                    {
-                        x = road * (rasxod * ves_gr) / 2 / 100;
-                    }
-                    else
-                    {
-                        x = road * (rasxod * ves_gr) / 100;
-                    }
-                    Console.WriteLine($"Необходимо: {x} литров бензина");
-                    Vrem();
-                    if (x < kol_benz || x == kol_benz)
-                    {
-                        Console.WriteLine("Вам хватает бензина");
                         kol_benz = kol_benz - x;
                         Ostatok();
-                        otvet = "Да";
-                        Refill();
                         Mileage();
                     }
-                if (x > kol_benz)
+                }
+                if (otvet == "Нет")
                 {
-                    do
-                    {
-                            itog = x - kol_benz;
-                            Console.WriteLine($"Вам не хватает: {itog} литров бензина");
-                            Refill();
-                            y = itog;
-                            if (y < kol_benz)
-                            {
-                                Mileage();
-                            }
-                            if (otvet == "Нет")
-                            {
-                                break;
-                            }
-                        
-                    } while (y >= kol_benz);
-                    kol_benz = kol_benz - x;
-                }    
-                    
-                } while (otvet == "Да");           
+                    kol_benz = 0;
+                    Ostatok();
+                    Mileage();
+                }
+                Igra();
+            } while (otvet_2 == "Да");
         }
     }
 }
