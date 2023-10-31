@@ -1,0 +1,8 @@
+D:\Avtobys_Gr\bin\Debug\Avtobys_Gr.exe.config
+D:\Avtobys_Gr\bin\Debug\Avtobys_Gr.exe
+D:\Avtobys_Gr\bin\Debug\Avtobys_Gr.pdb
+D:\Avtobys_Gr\obj\Debug\Avtobys_Gr.csproj.AssemblyReference.cache
+D:\Avtobys_Gr\obj\Debug\Avtobys_Gr.csproj.SuggestedBindingRedirects.cache
+D:\Avtobys_Gr\obj\Debug\Avtobys_Gr.csproj.CoreCompileInputs.cache
+D:\Avtobys_Gr\obj\Debug\Avtobys_Gr.exe
+D:\Avtobys_Gr\obj\Debug\Avtobys_Gr.pdb
