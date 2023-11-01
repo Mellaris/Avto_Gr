@@ -26,6 +26,28 @@ namespace Avtobys_Gr
         protected int road;
         protected float counter = 0;
         protected float hepl;
+        public void Info()
+        {
+            Console.WriteLine("Чем вы хотите управлять? 1 - Автобус, 2 - Грузовик");
+            vibor = Convert.ToInt32(Console.ReadLine());
+            Benz();
+            Console.Write("Введите расход на 100км: ");
+            rasxod = float.Parse(Console.ReadLine());
+            Console.Write("Введите с какой скоростью хотите ехать: ");
+            speed = Convert.ToInt32(Console.ReadLine());
+            if (vibor == 1)
+            {
+                Console.WriteLine("Укажите количество людей в автобусе: ");
+                kol_p = Convert.ToInt32(Console.ReadLine());
+                Challenge();
+            }
+            else if (vibor == 2)
+            {
+                Console.WriteLine("Укажите вес груза: ");
+                ves_gr = Convert.ToInt32(Console.ReadLine());
+                Challenge();
+            }
+        }
         protected void Igra()
         {
             Console.WriteLine("Вы хотите продолжить путь?");
@@ -36,7 +58,7 @@ namespace Avtobys_Gr
         {
             Console.WriteLine($"Номер вашего авто: {vibor}; Количество бензина: {kol_benz}; Расход на 100км: {rasxod}; Ваша скорость: {speed}");
         }
-        protected void Benz()
+        public void Benz()
         {
             Console.Write("Укажите сколько хотите добавить литров бензина: ");
             benz = Convert.ToInt32(Console.ReadLine());
@@ -71,7 +93,7 @@ namespace Avtobys_Gr
                 Console.WriteLine($"Вам хватит на {km} km");
             }
         }
-        protected void Mileage()
+        protected void Probeg()
         {
             if (otvet == "Нет")
             {
@@ -95,6 +117,54 @@ namespace Avtobys_Gr
             Console.WriteLine($"Необходимо: {t} минут");
         }
         public virtual void Trip()
-        {}
+        {
+            do
+            {
+                Random random = new Random();
+                road = random.Next(5, 300);
+                Console.WriteLine($"Необходимо проехать: {road}");
+                if (speed > 90)
+                {
+                    x = road * rasxod * 2 / 100;
+                }
+                else if (speed < 60)
+                {
+                    x = road * rasxod / 2 / 100;
+                }
+                else
+                {
+                    x = road * rasxod / 100;
+                }
+                Console.WriteLine($"Необходимо: {x} литров бензина");
+                Vrem();
+                if (x < kol_benz || x == kol_benz)
+                {
+                    Console.WriteLine("Вам хватает бензина");
+                    kol_benz = kol_benz - x;
+                    Ostatok();
+                    Refill();
+                    Probeg();
+                }
+                else if (x > kol_benz)
+                {
+                    itog = x - kol_benz;
+                    Console.WriteLine($"Вам не хватает: {itog} литров бензина");
+                    Refill();
+                    if (otvet == "Да")
+                    {
+                        kol_benz = kol_benz - x;
+                        Ostatok();
+                        Probeg();
+                    }
+                }
+                if (otvet == "Нет")
+                {
+                    kol_benz = 0;
+                    Ostatok();
+                    Probeg();
+                }
+                Igra();
+            } while (otvet_2 == "Да");
+        }
     }  
 }

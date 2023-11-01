@@ -14,7 +14,6 @@ namespace Avtobys_Gr
         private int ves = 60;
         private int sum_ves;
         private int ves_p;
-        protected float t;
         public override void Trip()
         {
             do
@@ -43,7 +42,7 @@ namespace Avtobys_Gr
                     kol_benz = kol_benz - x;
                     Ostatok();
                     Refill();
-                    Mileage();
+                    Probeg();
                 }
                 else if (x > kol_benz)
                 {
@@ -54,14 +53,14 @@ namespace Avtobys_Gr
                     {
                         kol_benz = kol_benz - x;
                         Ostatok();
-                        Mileage();
+                        Probeg();
                     }
                 }
                 if (otvet == "Нет")
                 {
                     kol_benz = 0;
                     Ostatok();
-                    Mileage();
+                    Probeg();
                 }
                 Igra();
             } while (otvet_2 == "Да");

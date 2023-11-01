@@ -8,12 +8,14 @@ namespace Avtobys_Gr
 {
     internal class Program
     {
+      
         static void Main(string[] args)
         {
             Avto car_1 = new Avto();
+            car_1.Info();
             Avtobus car_2 = new Avtobus();
             Gr car_3 = new Gr();
-            car_3.Info();
+            //car_3.Info();
         }
     }
 }
