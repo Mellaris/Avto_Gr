@@ -55,7 +55,7 @@ namespace Avtobys_Gr
         {
             Console.WriteLine($"Количество бензина: {kol_benz}; Расход на 100км: {rasxod}; Ваша скорость: {speed}");
         }
-        public void Benz()
+        protected void Benz()
         {
             Console.Write("Укажите сколько хотите добавить литров бензина: ");
             benz = Convert.ToInt32(Console.ReadLine());
