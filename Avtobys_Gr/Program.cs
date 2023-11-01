@@ -8,14 +8,26 @@ namespace Avtobys_Gr
 {
     internal class Program
     {
-      
         static void Main(string[] args)
         {
+            int vibor;
             Avto car_1 = new Avto();
-            car_1.Info();
             Avtobus car_2 = new Avtobus();
             Gr car_3 = new Gr();
-            //car_3.Info();
+            Console.WriteLine("Чем вы хотите управлять? 1 - Автобус, 2 - Грузовик");
+            vibor = Convert.ToInt32(Console.ReadLine());
+            if (vibor == 1)
+            {
+                car_2.Info(vibor);
+                car_2.Challenge();
+                car_2.Trip();
+            }
+            else if (vibor == 2)
+            {
+                car_3.Info(vibor);
+                car_3.Challenge();
+                car_3.Trip();
+            }
         }
     }
 }

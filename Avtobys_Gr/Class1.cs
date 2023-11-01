@@ -26,26 +26,23 @@ namespace Avtobys_Gr
         protected int road;
         protected float counter = 0;
         protected float hepl;
-        public void Info()
+        public void Info(int vibor)
         {
-            Console.WriteLine("Чем вы хотите управлять? 1 - Автобус, 2 - Грузовик");
-            vibor = Convert.ToInt32(Console.ReadLine());
             Benz();
             Console.Write("Введите расход на 100км: ");
             rasxod = float.Parse(Console.ReadLine());
             Console.Write("Введите с какой скоростью хотите ехать: ");
             speed = Convert.ToInt32(Console.ReadLine());
+            this.vibor = vibor;
             if (vibor == 1)
             {
                 Console.WriteLine("Укажите количество людей в автобусе: ");
                 kol_p = Convert.ToInt32(Console.ReadLine());
-                Challenge();
             }
             else if (vibor == 2)
             {
                 Console.WriteLine("Укажите вес груза: ");
                 ves_gr = Convert.ToInt32(Console.ReadLine());
-                Challenge();
             }
         }
         protected void Igra()
@@ -56,7 +53,7 @@ namespace Avtobys_Gr
         }
         public void Challenge()
         {
-            Console.WriteLine($"Номер вашего авто: {vibor}; Количество бензина: {kol_benz}; Расход на 100км: {rasxod}; Ваша скорость: {speed}");
+            Console.WriteLine($"Количество бензина: {kol_benz}; Расход на 100км: {rasxod}; Ваша скорость: {speed}");
         }
         public void Benz()
         {

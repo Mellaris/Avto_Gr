@@ -8,31 +8,6 @@ namespace Avtobys_Gr
 {
     internal class Gr : Avto
     {
-        private int sum_2_ves;
-        //public void Info()
-        //{
-        //    Console.WriteLine("Чем вы хотите управлять? 1 - Автобус, 2 - Грузовик");
-        //    vibor = Convert.ToInt32(Console.ReadLine());
-        //    Benz();
-        //    Console.Write("Введите расход на 100км: ");
-        //    rasxod = float.Parse(Console.ReadLine());
-        //    Console.Write("Введите с какой скоростью хотите ехать: ");
-        //    speed = Convert.ToInt32(Console.ReadLine());
-        //    if (vibor == 1)
-        //    {
-        //        Console.WriteLine("Укажите количество людей в автобусе: ");
-        //        kol_p = Convert.ToInt32(Console.ReadLine());
-        //        Challenge();
-        //        Trip();
-        //    }
-        //    else if (vibor == 2)
-        //    {
-        //        Console.WriteLine("Укажите вес груза: ");
-        //        ves_gr = Convert.ToInt32(Console.ReadLine());
-        //        Challenge();
-        //        Trip();
-        //    }
-        //}
         public override void Trip()
         {        
             do
