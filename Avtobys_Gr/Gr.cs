@@ -20,7 +20,7 @@ namespace Avtobys_Gr
                 road = random.Next(5, 100);
                 Console.WriteLine($"Необходимо проехать: {road}");
                 Ves();
-                Neobxodimo();
+                Neobxodimo(ves_gr);
                 if (x > 100)
                 {
                     Vrem();
@@ -33,7 +33,7 @@ namespace Avtobys_Gr
                         {
                             Console.WriteLine($"Осталось проехать: {road}");
                             kol_benz = 0;
-                            Neobxodimo();
+                            Neobxodimo(ves_gr);
                             Refill();
                             x = x - kol_benz;
                         }
@@ -72,22 +72,6 @@ namespace Avtobys_Gr
                 Console.WriteLine($"Общий пробег: {counter}");
                 Igra();
             } while (otvet_2 == "Да");
-        }
-        protected void Neobxodimo()
-        {
-            if (speed > 90)
-            {
-                x = (road * rasxod * ves_gr * 2) / 100;
-            }
-            else if (speed < 60)
-            {
-                x = (road * rasxod * ves_gr / 2) / 100;
-            }
-            else
-            {
-                x = (road * rasxod * ves_gr) / 100;
-            }
-            Console.WriteLine($"Необходимо: {x} литров бензина");
         }
         protected override void Ves()
         {

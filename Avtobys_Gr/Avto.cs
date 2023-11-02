@@ -146,6 +146,23 @@ namespace Avtobys_Gr
             t = t * 60;
             Console.WriteLine($"Необходимо: {t} минут");
         }
+        protected int Neobxodimo(int a)
+        {
+            if (speed > 90)
+            {
+                x = (road * rasxod * a * 2) / 100;
+            }
+            else if (speed < 60)
+            {
+                x = (road * rasxod * a / 2) / 100;
+            }
+            else
+            {
+                x = (road * rasxod * a) / 100;
+            }
+            Console.WriteLine($"Необходимо: {x} литров бензина");
+            return a;
+        }
         protected virtual void Trip()
         {
             do

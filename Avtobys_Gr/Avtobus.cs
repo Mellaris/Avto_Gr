@@ -15,7 +15,6 @@ namespace Avtobys_Gr
         {
             Trip();
         }
-
         protected override void Trip()
         {
             do
@@ -24,11 +23,11 @@ namespace Avtobys_Gr
                 road = random.Next(5, 100);
                 Console.WriteLine($"Необходимо проехать: {road}");
                 Ves();
-                Neobxodimo();
+                Neobxodimo(ves_p);
                 if (x > 100)
                 {
                     Vrem();
-                    counter = counter + road;
+                    Probeg();
                     while (road > 0)
                     {
                         Xvatit();
@@ -37,7 +36,7 @@ namespace Avtobys_Gr
                         {
                             Console.WriteLine($"Осталось проехать: {road}");
                             kol_benz = 0;
-                            Neobxodimo();
+                            Neobxodimo(ves_p);
                             Refill();
                             x = x - kol_benz;
                         }                                             
@@ -76,22 +75,5 @@ namespace Avtobys_Gr
                 Igra();
             } while (otvet_2 == "Да");
         }
-        protected void Neobxodimo()
-        {
-            if (speed > 90)
-            {
-                x = (road * rasxod * ves_p * 2) / 100;
-            }
-            else if (speed < 60)
-            {
-                x = (road * rasxod * ves_p / 2) / 100;
-            }
-            else
-            {
-                x = (road * rasxod * ves_p) / 100;
-            }
-            Console.WriteLine($"Необходимо: {x} литров бензина");
-        }
-       
     }
 }
