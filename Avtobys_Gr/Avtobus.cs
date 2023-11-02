@@ -70,7 +70,6 @@ namespace Avtobys_Gr
                     }
                     if (otvet == "Нет")
                     {
-                        kol_benz = 0;
                         Ostatok();
                     }
                 }

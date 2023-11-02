@@ -122,10 +122,6 @@ namespace Avtobys_Gr
         }
         protected void Probeg()
         {
-            if (otvet == "Нет")
-            {
-                counter = counter + km;
-            }
             if (kol_benz > 0)
             {
                 counter = counter + road;
