@@ -29,24 +29,13 @@ namespace Avtobys_Gr
         protected int ves = 60;
         protected int sum_ves;
         protected int ves_p;
-        public void Info(int vibor)
+        public void Info()
         {
             Benz();
             Console.Write("Введите расход на 100км: ");
             rasxod = float.Parse(Console.ReadLine());
             Console.Write("Введите с какой скоростью хотите ехать: ");
             speed = Convert.ToInt32(Console.ReadLine());
-            this.vibor = vibor;
-            if (vibor == 1)
-            {
-                Console.WriteLine("Укажите количество людей в автобусе: ");
-                kol_p = Convert.ToInt32(Console.ReadLine());
-            }
-            else if (vibor == 2)
-            {
-                Console.WriteLine("Укажите вес груза: ");
-                ves_gr = Convert.ToInt32(Console.ReadLine());
-            }
         }
         protected void Igra()
         {

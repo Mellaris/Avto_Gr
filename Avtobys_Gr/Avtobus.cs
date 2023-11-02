@@ -19,6 +19,8 @@ namespace Avtobys_Gr
         {
             do
             {
+                Console.WriteLine("Укажите количество людей в автобусе: ");
+                kol_p = Convert.ToInt32(Console.ReadLine());
                 Random random = new Random();
                 road = random.Next(5, 100);
                 Console.WriteLine($"Необходимо проехать: {road}");

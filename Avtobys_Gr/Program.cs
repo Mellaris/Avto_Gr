@@ -18,13 +18,13 @@ namespace Avtobys_Gr
             vibor = Convert.ToInt32(Console.ReadLine());
             if (vibor == 1)
             {
-                car_2.Info(vibor);
+                car_2.Info();
                 car_2.Challenge();
                 car_2.Vivod_In();
             }
             else if (vibor == 2)
             {
-                car_3.Info(vibor);
+                car_3.Info();
                 car_3.Challenge();
                 car_3.Vivod_Inf();
             }

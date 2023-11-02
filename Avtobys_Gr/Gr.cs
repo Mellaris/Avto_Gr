@@ -16,6 +16,8 @@ namespace Avtobys_Gr
         {        
             do
             {
+                Console.WriteLine("Укажите вес груза: ");
+                ves_gr = Convert.ToInt32(Console.ReadLine());
                 Random random = new Random();
                 road = random.Next(5, 100);
                 Console.WriteLine($"Необходимо проехать: {road}");
