@@ -29,6 +29,7 @@ namespace Avtobys_Gr
         protected int ves = 60;
         protected int sum_ves;
         protected int ves_p;
+        protected float ras;
         public void Info()
         {
             Benz();
@@ -36,6 +37,12 @@ namespace Avtobys_Gr
             rasxod = float.Parse(Console.ReadLine());
             Console.Write("Введите с какой скоростью хотите ехать: ");
             speed = Convert.ToInt32(Console.ReadLine());
+            while (speed > 150)
+            {
+                Console.WriteLine("Ваша скорость не может быть больше 150. Попробуйте ещё раз");
+                Console.Write("Введите с какой скоростью хотите ехать: ");
+                speed = Convert.ToInt32(Console.ReadLine());
+            }
         }
         protected void Igra()
         {
@@ -71,7 +78,7 @@ namespace Avtobys_Gr
                 {
                     if (x < kol_benz || x == kol_benz)
                     {
-                        Console.WriteLine("Вам хватает бензина");                    
+                        Console.WriteLine("Вам хватает бензина");
                     }
                 }
             }
@@ -122,7 +129,7 @@ namespace Avtobys_Gr
             if (kol_benz > 0)
             {
                 counter = counter + road;
-            }     
+            }
         }
         protected void Ostatok()
         {
@@ -150,6 +157,23 @@ namespace Avtobys_Gr
                 x = (road * rasxod * a) / 100;
             }
             Console.WriteLine($"Необходимо: {x} литров бензина");
+            return a;
+        }
+        protected int Rasxod(int a)
+        {
+            if (speed > 90)
+            {
+                ras = road * rasxod * a * 2;
+            }
+            else if (speed < 60)
+            {
+                ras = road * rasxod * a / 2;
+            }
+            else
+            {
+                ras = road * rasxod * a;
+            }
+            Console.WriteLine($"Ваш новый расход: {ras}");
             return a;
         }
         protected virtual void Trip()
@@ -201,5 +225,5 @@ namespace Avtobys_Gr
                 Igra();
             } while (otvet_2 == "Да");
         }
-    }  
+    }
 }

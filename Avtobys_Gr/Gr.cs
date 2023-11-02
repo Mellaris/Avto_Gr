@@ -23,10 +23,11 @@ namespace Avtobys_Gr
                 Console.WriteLine($"Необходимо проехать: {road}");
                 Ves();
                 Neobxodimo(ves_gr);
+                Rasxod(ves_gr);
                 if (x > 100)
                 {
                     Vrem();
-                    counter = counter + road;
+                    Probeg();
                     while (road > 0)
                     {
                         Xvatit();
@@ -39,7 +40,6 @@ namespace Avtobys_Gr
                             Refill();
                             x = x - kol_benz;
                         }
-
                     }
                 }
                 else

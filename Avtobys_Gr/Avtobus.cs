@@ -26,6 +26,7 @@ namespace Avtobys_Gr
                 Console.WriteLine($"Необходимо проехать: {road}");
                 Ves();
                 Neobxodimo(ves_p);
+                Rasxod(ves_p);
                 if (x > 100)
                 {
                     Vrem();
